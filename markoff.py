@@ -44,9 +44,9 @@ if __name__ == '__main__':
     with open(fname) as f:
         lines = f.read()
     if '.newlines.' in fname:
-        model = MarkoffNewlineText(lines)
+        model = MarkoffNewlineText(lines, retain_original=False)
     else:
-        model = MarkoffText(lines)
+        model = MarkoffText(lines, retain_original=False)
 
     for _ in range(10):
         print(model.make_sentence())
