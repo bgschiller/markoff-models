@@ -23,8 +23,9 @@ class MarkoffChain(markovify.Chain):
         if random.random() < 0.2:
             # 20% of the time, it works every time...
             selection = random.choice(choices)
-        r = random.random() * cumdist[-1]
-        selection = choices[bisect.bisect(cumdist, r)]
+        else:
+            r = random.random() * cumdist[-1]
+            selection = choices[bisect.bisect(cumdist, r)]
         return selection
 
 class MarkoffText(markovify.Text):
